@@ -6,22 +6,19 @@ $weight_difference = $max_weight_value - $min_weight_value;
 $balance_weights = explode(',', $argv[3]);
 arsort($balance_weights);
 
-if ($argv[1] == $argv[2])
-{
+if ($argv[1] == $argv[2]) {
     $response = 'In balans';
 }
 else
 {
     foreach ($balance_weights as $balance_weight)
     {
-        if ($weight_difference >= $balance_weight)
-        {
+        if ($weight_difference >= $balance_weight) {
             $weight_list[] = $balance_weight;
             $weight_difference -= $balance_weight;
         }
     }
-    if ($weight_difference !== 0)
-    {
+    if ($weight_difference !== 0) {
         $response = 'Not balanced';
     }
 }
